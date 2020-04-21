@@ -1,0 +1,189 @@
+a:visited {
+  color: floralwhite;
+}
+nav-item:hover {
+  font-weight: bold;
+  color: red;
+}
+
+HTML{
+  background-color: cornsilk;
+}
+
+.App {
+  background-color: cornsilk;
+}
+
+/* LANDING.JSX */
+
+.landingText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 1%;
+}
+
+.buttonsWrapper {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.loginOrSignUpText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#loginButton {
+  margin-top: 3%;
+  background-color: tomato;
+}
+
+#signupButton {
+  margin-top: 3%;
+  background-color: white;
+  color: black
+}
+
+/* ABOUT.JSX */
+.aboutTextWrapper {
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.aboutText {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+/* NAV.JSX */
+.nav {
+  display: flex;
+  flex-direction: row;
+  background-color: skyblue;
+  color: floralwhite;
+  position: sticky;
+  top: 0;
+}
+
+#nameOnNav {
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: left;
+  position: absolute;
+  left: 0;
+  margin-left: 2%;
+}
+
+.nav-item {
+  margin-right: 1%;
+  margin-left: 1%;
+  color: white
+}
+
+.navItemName {
+  font-size: 120%;
+  margin-top: 2px;
+}
+
+/* ABOUT.JSX */
+.AboutContainer {
+  color: #494ab2;
+}
+
+/* LOGINFORM.JSX */
+.loginFormInputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.loginFormText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 1%;
+}
+
+#loginFormComponentButton {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  background-color: tomato;
+}
+
+.LoginFormFormElement {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+
+/* LOGINFORM.JSX */
+#signupFormComponentButton {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  background-color: white;
+  color: black
+}
+
+/* NEWYORKCITYTRASHCAMS.JSX */
+#NYCTrashcansAPI {
+  margin-right: auto;
+  margin-left: auto;
+  width: 65%;
+  height: 500px;
+}
+
+/* DROPDOWNNAVELEMENT.JSX */
+#dropdownMenuButton {
+  background-color: skyblue;
+  border-color: skyblue;
+}
+
+.dropDownCityOption {
+  color: black;
+  transition: color 1s ease-in-out;
+}
+
+/* ADDHABITFORM.JSX */
+.addHabitInputDivs {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1%;
+  width: 60%;
+  color: #494ab2
+}
+
+#addHabitSubmitButtonDiv {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1%;
+  width: 60%;
+}
+
+#addHabitSubmitButton {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#daysOfTheWeekCheckboxesContainer {
+  display: flexbox;
+  justify-content: space-between;
+}
+
+.dayOfTheWeekInputs {
+  display: inline-block;
+  margin-left: 2%;
+}
