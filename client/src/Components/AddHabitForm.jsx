@@ -250,3 +250,146 @@ const AddHabitForm = props => {
 }
 
 export default AddHabitForm;
+
+
+
+
+
+
+
+
+
+// NEW CODE
+
+
+// import React, { useState } from 'react';
+// import '../App.css';
+// import axios from "axios";
+
+// const DAYS_OF_WEEK = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+// const AddHabitForm = props => {
+//     const [habitName, setHabitName] = useState("");
+//     const [checkboxesState, setCheckboxesState] = useState({}); 
+//     const [triggersToAvoidValue, setTriggersToAvoidValue] = useState("");
+//     const [descriptionValue, setDescriptionValue] = useState("");
+
+//     const handleHabitInputChange = (e) => {
+//         setHabitName(e.target.value)
+//     }
+
+//     const handleDayOfWeekCheckboxChange = (e) => {
+//         let existingValue = checkboxesState[e.target.value] // look into closures
+//         if (!existingValue) {
+//             existingValue = {};
+//         }
+//         setCheckboxesState({
+//             ...checkboxesState,
+//             [e.target.value]: {...existingValue, checked: !existingValue.checked}, // get opposite of the checkedbEFORE
+//         })
+//     }
+
+//     const handleTriggersToAvoidInputChange = (e) => {
+//         setTriggersToAvoidValue(e.target.value);
+//     }
+
+//     const handleDescriptionInputChange = (e) => {
+//         setDescriptionValue(e.target.value);
+//     }
+
+//     const addHabit = async (e) => {
+//         e.preventDefault();
+//         console.log("Add habit function starting");
+//         const reqBody = {
+//             habit_name: habitName, 
+//             description: descriptionValue,
+//             created_at: Math.floor(Date.now() / 1000), // timestamp in seconds
+//             triggers_to_avoid: triggersToAvoidValue,
+//         }
+
+//         // stack overflow link for persisting cookie in passport.js
+//         // https://stackoverflow.com/questions/36486397/passport-login-and-persisting-session
+
+//         console.log("addHabit reqBody:", reqBody)
+
+//         let data = await axios.post("http://localhost:4000/habits/", reqBody);
+//         console.log("Making POST request. Adding a habit to the db");
+//         console.log("addHabit data:", data);
+//     }
+
+//     return (
+//         <div>
+//             <form onSubmit={addHabit} >
+//                 <div className="addHabitInputDivs form-group">
+//                     <label htmlFor="exampleFormControlInput1">Habit</label>
+//                     <input 
+//                         type="text" 
+//                         className="form-control" 
+//                         id="exampleFormControlInput1" 
+//                         placeholder="Study DSA" 
+//                         onChange={handleHabitInputChange}
+//                         required
+//                     />
+//                 </div>
+//                 <div className="addHabitInputDivs form-group">
+//                 <p>Days of the week (24 Hour Format)</p>
+//                 <div id="daysOfTheWeekCheckboxesContainer">
+//                     {DAYS_OF_WEEK.map(d => (
+//                         <div className="form-check form-check-inline" key={d}>
+//                             <input 
+//                                 className="form-check-input" 
+//                                 type="checkbox"
+//                                 checked={checkboxesState[d]} //need to check "checked", could be undefinied, 
+//                                 onChange={handleDayOfWeekCheckboxChange}
+//                             />
+//                             <label className="form-check-label" htmlFor="inlineCheckbox1">{d}</label>
+//                                 { /* {CONDITION? && } */
+//                                     <div className="dayOfTheWeekInputs">
+//                                         <label style={{ display: "block" }} htmlFor={"dayOfTheWeekInput" + d}>{d}</label>
+//                                         <input 
+//                                             id={"dayOfTheWeekInput" + d}
+//                                             placeholder="15:00"
+//                                             type="text"
+//                                             required
+//                                         />
+//                                     </div>
+//                                 }
+//                         </div>
+//                     ))}
+//                 </div>
+
+// {/* Make all checkboxes day of the week a single state var and have use loops and no repititve code.   */}
+
+
+//                 <div className="addHabitInputDivs form-group">
+//                     <label htmlFor="exampleFormControlTextarea1">Triggers to Avoid</label>
+//                     <textarea 
+//                         className="form-control" 
+//                         id="exampleFormControlTextarea1" 
+//                         rows="3"
+//                         onChange={handleTriggersToAvoidInputChange}
+//                     ></textarea>
+//                 </div>
+//                 <div className="addHabitInputDivs form-group">
+//                     <label htmlFor="addHabitFormDescription">Description</label>
+//                     <textarea 
+//                         className="form-control" 
+//                         id="addHabitFormDescription" 
+//                         rows="3"
+//                         onChange={handleDescriptionInputChange}
+//                     ></textarea>
+//                 </div>
+//                 <div id="addHabitSubmitButtonDiv" className="form-group">
+//                     <button 
+//                       id="addHabitSubmitButton" 
+//                       type="submit" 
+//                       className="btn btn-primary"
+//                     >Add</button>                    
+//                 </div>
+//             </div>
+//             </form>
+//         </div>
+//     );
+// }
+
+// export default AddHabitForm;
