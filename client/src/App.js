@@ -6,8 +6,9 @@ import About from "./Components/About";
 import Nav from "./Components/Nav";
 import PrivateRoute from './Components/PrivateRoute';
 import Users from './Components/Users';
-import NewYorkCityTrashCans from "./Components/NewYorkCityTrashCans";
 import AddHabitForm from "./Components/AddHabitForm";
+import Profile from "./Components/Profile";
+import SingleHabitInfo from "./Components/SingleHabitInfo";
 import { Switch, Route, withRouter } from 'react-router-dom';
 import axios from "axios";
 
@@ -71,7 +72,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { isUserLoggedIn, loadingUser } = this.state;
+    const { isUserLoggedIn } = this.state;
 
     return(
       <div className="App">
@@ -85,10 +86,17 @@ class App extends React.Component {
             <Route path="/about" component={About} />
             <Route path="/login" render={this.renderAuthContainer} />
             <Route path="/signup" render={this.renderAuthContainer} />
-            <Route path="/NYCTrashCans" component={NewYorkCityTrashCans} />
             <PrivateRoute path="/addHabit" component={AddHabitForm} isUserLoggedIn={isUserLoggedIn} />
             <PrivateRoute path="/users" component={Users} isUserLoggedIn={isUserLoggedIn} />
-            <PrivateRoute path="/profile" render={() => <h1> Profile </h1>} isUserLoggedIn={isUserLoggedIn} />
+            <PrivateRoute path="/profile" component={Profile} isUserLoggedIn={isUserLoggedIn} />
+            <PrivateRoute 
+              path="/SingleHabitInfo/:id" 
+              component={(props) => (
+                <SingleHabitInfo 
+                  {...props}
+                />
+              )} 
+              isUserLoggedIn={isUserLoggedIn} />
         </Switch>
       </div>
     )

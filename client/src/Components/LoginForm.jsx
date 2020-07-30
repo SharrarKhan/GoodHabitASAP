@@ -12,7 +12,7 @@ const LoginForm = ({ username, password, handleChange, loginUser }) => {
       <h3 className="loginFormText"> Log In </h3>
       <form className="LoginFormFormElement" onSubmit={handleSubmit}>
         <div className="form-group">
-            <label for="exampleInputEmail1">Email Address</label>
+            <label htmlFor="exampleInputEmail1">Email Address</label>
             <input 
                 type="email" 
                 className="loginFormInputs form-control" 
@@ -25,7 +25,7 @@ const LoginForm = ({ username, password, handleChange, loginUser }) => {
             />
         </div>
         <div className="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label htmlFor="exampleInputPassword1">Password</label>
             <input 
                 type="password" 
                 className="loginFormInputs form-control" 

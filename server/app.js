@@ -5,6 +5,7 @@ const logger = require('morgan');
 const session = require("express-session");
 const passport = require("./auth/passport");
 const cors = require("cors");
+const helpers = require("./auth/helpers");
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -31,6 +32,6 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/auth", authRouter);
-app.use("/habits", habitsRouter);
+app.use("/habits", helpers.loginRequired, habitsRouter);
 
 module.exports = app;

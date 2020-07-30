@@ -4,6 +4,7 @@ const { comparePasswords } = require('../auth/helpers');
 const usersQueries = require('../db/queries/users');
 
 passport.use(new LocalStrategy(async (username, password, done) => {
+  console.log("passport.use function in passport.js starting");
   console.log("Authenticating user");
   try {
     const user = await usersQueries.getUserByUsername(username);
@@ -29,16 +30,17 @@ passport.serializeUser((user, done) => {
   done(null, user);
 })
 
-passport.deserializeUser(async (user, done) => {
+passport.deserializeUser( (user, done) => { // it was "izeUser" but renamed it to "deserializeUser"
   console.log("Deserializing user from session");
-  try {
-    let retrievedUser = await usersQueries.getUserByUsername(user.username)
-    delete retrievedUser.password_digest;
-    done(null, retrievedUser)
+  // try {
+  //   let retrievedUser = await usersQueries.getUserByUsername(user.username)
+  //   delete retrievedUser.password_digest;
+  //   done(null, retrievedUser)
     
-  } catch (err) {
-    done(err, false)
-  }
+  // } catch (err) {
+  //   done(err, false)
+  // }
+  done(null, user);
 })
 
 module.exports = passport;
