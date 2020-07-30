@@ -1,17 +1,18 @@
 a:visited {
   color: floralwhite;
 }
+
 nav-item:hover {
   font-weight: bold;
-  color: red;
+  color: gray;
 }
 
 HTML{
-  background-color: cornsilk;
+  background-color: beige;
 }
 
 .App {
-  background-color: cornsilk;
+  background-color: beige;
 }
 
 /* LANDING.JSX */
@@ -22,6 +23,7 @@ HTML{
   justify-content: center;
   flex-direction: row;
   margin-top: 1%;
+  color: black;
 }
 
 .buttonsWrapper {
@@ -41,7 +43,7 @@ HTML{
 
 #loginButton {
   margin-top: 3%;
-  background-color: tomato;
+  background-color: #36454f;
 }
 
 #signupButton {
@@ -67,7 +69,7 @@ HTML{
 .nav {
   display: flex;
   flex-direction: row;
-  background-color: skyblue;
+  background-color:#494ab2;
   color: floralwhite;
   position: sticky;
   top: 0;
@@ -86,12 +88,22 @@ HTML{
 .nav-item {
   margin-right: 1%;
   margin-left: 1%;
-  color: white
+  color: char
 }
 
 .navItemName {
   font-size: 120%;
   margin-top: 2px;
+}
+
+.navItemName:hover {
+  color: lightgray;
+}
+
+#logOutButton {
+  background-color: #36454f;
+  border: thin;
+  border-color: #494ab2;
 }
 
 /* ABOUT.JSX */
@@ -119,7 +131,10 @@ HTML{
   margin-right: auto;
   margin-left: auto;
   display: block;
-  background-color: tomato;
+  color: black;
+  background-color: snow;
+  border: solid;
+  border-color: gray;
 }
 
 .LoginFormFormElement {
@@ -138,32 +153,13 @@ HTML{
   color: black
 }
 
-/* NEWYORKCITYTRASHCAMS.JSX */
-#NYCTrashcansAPI {
-  margin-right: auto;
-  margin-left: auto;
-  width: 65%;
-  height: 500px;
-}
-
-/* DROPDOWNNAVELEMENT.JSX */
-#dropdownMenuButton {
-  background-color: skyblue;
-  border-color: skyblue;
-}
-
-.dropDownCityOption {
-  color: black;
-  transition: color 1s ease-in-out;
-}
-
 /* ADDHABITFORM.JSX */
 .addHabitInputDivs {
   margin-right: auto;
   margin-left: auto;
   margin-top: 1%;
   width: 60%;
-  color: #494ab2
+  color: #494ab2;
 }
 
 #addHabitSubmitButtonDiv {
@@ -186,4 +182,101 @@ HTML{
 .dayOfTheWeekInputs {
   display: inline-block;
   margin-left: 2%;
+}
+
+/* PROFILE.JSX */
+
+.divsInProfile {
+  border: solid;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+#profileHeaderTagContainer {
+  border: none;
+}
+
+#profileHeaderTag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: #36454f;
+}
+
+#habitsIWantToDevelopContainer {
+  display: inline-block;
+  width: 30%;
+  height: 30%;
+  margin-left: 10%;
+  border: none
+}
+
+#habitsIWantToDevelopHTag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  color: #494ab2;
+}
+
+#habitsToDoTodayContainer {
+  display: inline-block;
+  width: 30%;
+  height: 30%;
+  float: right;
+  margin-right: 10%;
+}
+
+#habitsToDoTodayPTag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.profileDivsTopTextElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.habitWantToDevelopItem {
+  border-style: solid;
+  border-color: #36454f;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.textOfHabitWantToDevelopItem {
+  color: #36454f;
+}
+
+.pTagOfHabitsIWantToDevelop {
+  margin-left: 2%;
+  margin-top: 4%;
+  color: #494ab2;
+}
+
+.textOfHabitWantToDevelopItem:visited {
+  color: #36454f;
+}
+
+/* SINGLEHABITINFO.JSX */
+
+#habitNameDivInSingleHabitInfo {
+  margin-left: 2%;
+}
+
+#habitDescriptionDivInSingleHabitInfo {
+  margin-left: 2%;
+}
+
+.hTagsInSingleHabitInfo {
+  margin-top: 1%;
+}
+
+.pTagsInSingleHabitInfo {
+  margin-left: 1%;
 }

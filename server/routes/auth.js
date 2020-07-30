@@ -35,7 +35,7 @@ router.post("/signup", async (req, res, next) => {
 });
 
 router.post("/login", passport.authenticate("local"), (req, res, next) => {
-    console.log(req.body);
+    console.log("AUTH.JS, /login post route, req.user:", req.user);
     res.json({
         payload: true,
         msg: "User successfully logged in",
@@ -53,6 +53,7 @@ router.get("/logout", authHelpers.loginRequired, (req, res, next) => {
 });
 
 router.get("/isUserLoggedIn", authHelpers.loginRequired, (req, res, next) => {
+    console.log("AUTH.JS, req.user:", req.user);
     res.json({
       payload: req.user,
       msg: "User is logged in. Session active",

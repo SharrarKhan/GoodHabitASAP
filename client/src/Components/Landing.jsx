@@ -6,8 +6,7 @@ function Landing() {
   return (
     <div className="LandingContainer">
       <div>
-        <h2 className="landingText">Welcome to Trashcan Near Me!</h2>
-        <p className="landingText">Press on search to look for trash cans in your area</p>
+        <h2 className="landingText">Welcome to GoodHabitASAP!</h2>
       </div>
 
       <div>

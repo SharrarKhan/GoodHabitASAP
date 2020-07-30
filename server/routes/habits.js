@@ -25,6 +25,7 @@ router.get('/', async (req, res, next) => {
 router.post("/", async (req, res, next) => {
     console.log("POST method for adding a new habit started");
     console.log("req.body:", req.body);
+    console.log("req.user:", req.user); // req.user is undefined
     console.log("habit route req.user:", req.user.id);
     let copy = { ...req.body, user_id: req.user.id };
 
@@ -33,7 +34,7 @@ router.post("/", async (req, res, next) => {
     try {
     let habit = await habitsQuries.addHabit(copy);
     res.json({
-      payload: show,
+      payload: habit,
       msg: "Added a habit",
       err: false
     });
@@ -54,7 +55,7 @@ router.get("/:habit_name", async (req, res, next) => {
   try {
     let habit = await habitsQuries.getHabitByName(habitName);
     res.json({
-      payload: show,
+      payload: habit,
       msg: "Retrieved habit by habit name",
       err: false
     });
@@ -69,16 +70,38 @@ router.get("/:habit_name", async (req, res, next) => {
   }
 });
 
+router.get("/habit_info/:id", async (req, res, next) => {
+  console.log("GET method for getting a habit by id started");
+  let habitId = req.params.id;
+  try {
+    let habit = await habitsQuries.getHabitById(habitId);
+    res.json({
+      payload: habit,
+      msg: "Retrieved habit by habit id",
+      err: false
+    });
+
+  } catch (err) {
+      console.log("ERROR:", err);
+      res.status(500);
+      res.json({
+        payload: null,
+        msg: "Failed to retrieve habit by habit id",
+        err: true
+      });
+  }
+});
+
 router.get("/user/:username", async (req, res, next) => {
     console.log("GET method for getting all habits by username started");
     let username = req.params.username;
     console.log(username)
     try {
         let habits = await habitsQuries.getShowsByUserId(userId);
-        console.log(shows)
+        console.log(habits)
         res.json({
-            payload: shows,
-            msg: "Retrieved shows by user Id",
+            payload: habits,
+            msg: "Retrieved habits by user Id",
             err: false
         });
 
@@ -86,7 +109,7 @@ router.get("/user/:username", async (req, res, next) => {
         res.status(500);
         res.json({
             payload: null,
-            msg: "Failed to retrieve shows by user Id",
+            msg: "Failed to retrieve habits by user Id",
             err: true
         });
     }

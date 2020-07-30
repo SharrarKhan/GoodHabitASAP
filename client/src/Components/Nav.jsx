@@ -1,7 +1,6 @@
 import React from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
-import DropdownNavElement from "../Components/DropdownNavElement";
 
 const Nav = ({ logoutUser, isUserLoggedIn }) => {
     if (isUserLoggedIn) {
@@ -12,13 +11,10 @@ const Nav = ({ logoutUser, isUserLoggedIn }) => {
                         <h2>Good Habit ASAP</h2>
                     </li>
                     <li className="nav-item">
-                        <Link to="/about" ><p className="navItemName">Home</p></Link>
+                        <Link to="/profile" ><p className="navItemName">Profile</p></Link>
                     </li>
                     <li className="nav-item">
                         <Link to="/addHabit" ><p className="navItemName">Add a Habit</p></Link>
-                    </li>
-                    <li>
-                        <DropdownNavElement id="DropdownNavElementComponent" />
                     </li>
                     <li className="nav-item">
                         <Link to="/about" ><p className="navItemName">About</p></Link>
@@ -41,10 +37,7 @@ const Nav = ({ logoutUser, isUserLoggedIn }) => {
         <div className="NavContainer">
             <ul className="nav justify-content-end">
                 <li id="nameOnNav" className="nav-item">
-                    Trashcan Near Me
-                </li>
-                <li className="nav-item">
-                   <Link to="/map" >Map</Link>
+                    GoodHabitASAP
                 </li>
                 <li className="nav-item">
                    <Link to="/about" >About</Link>
